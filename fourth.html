@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI - Artificial Intelligence</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        .header {
+            margin-bottom: 20px;
+        }
+        .icon {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+        }
+        .red-black {
+            color: #FF0000;
+            background-color: #000;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        /* Light/Dark Mode Toggle - at the top */
+        .light-dark-toggle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .light-dark-toggle img {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .ai-features {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Light/Dark Mode Toggle - at the top -->
+    <div class="light-dark-toggle">
+        <img id="theme-logo" src="sun-icon.png" alt="Light Mode" onclick="toggleTheme()">
+    </div>
+
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Artificial Intelligence</h1>
+            <p>Explore AI capabilities</p>
+        </div>
+
+        <!-- AI Features Section -->
+        <div class="ai-features">
+            <h2>AI Features:</h2>
+            <div class="feature">
+                <p>Create Movies with AI</p>
+                <button class="button red-black">Create Movie</button>
+            </div>
+            <div class="feature">
+                <p>Create Models Synchronized with Text</p>
+                <button class="button red-black">Create Model</button>
+            </div>
+            <div class="feature">
+                <p>Create Ads with AI</p>
+                <button class="button red-black">Create Ad</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle theme between light and dark mode
+        let isDarkMode = false;
+        const themeLogo = document.getElementById('theme-logo');
+
+        function toggleTheme() {
+            if (isDarkMode) {
+                document.body.style.backgroundColor = '#fff';
+                document.body.style.color = '#000';
+                themeLogo.src = 'sun-icon.png'; // Sun icon for light mode
+            } else {
+                document.body.style.backgroundColor = '#000';
+                document.body.style.color = '#fff';
+                themeLogo.src = 'moon-icon.png'; // Moon icon for dark mode
+            }
+            isDarkMode = !isDarkMode;
+        }
+    </script>
+</body>
+</html>
