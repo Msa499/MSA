@@ -3,108 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI - Artificial Intelligence</title>
+    <title>Artificial Intelligence</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fff;
-            color: #000;
             margin: 0;
             padding: 0;
+            text-align: center;
+            transition: background-color 0.5s, color 0.5s;
         }
         .container {
-            text-align: center;
             padding: 20px;
         }
         .header {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
-        .icon {
-            width: 50px;
-            height: 50px;
-            margin: 10px;
+        .header h1 {
+            font-size: 36px;
+            color: #ffffff;
         }
-        .red-black {
-            color: #FF0000;
-            background-color: #000;
-            padding: 10px 20px;
-            border: none;
+        .option {
+            display: inline-block;
+            margin: 15px;
+            padding: 20px;
+            width: 250px;
+            height: 200px;
+            background: linear-gradient(135deg, #ff7f50, #ff4500); /* Orange gradient */
+            color: white;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .option:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .option img {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 10px;
+        }
+        .theme-toggle {
+            margin-top: 30px;
             cursor: pointer;
-        }
-        .button {
             padding: 10px 20px;
-            margin: 10px;
+            background-color: #1e90ff; /* Dodger Blue */
+            color: white;
+            border: none;
+            border-radius: 5px;
             font-size: 16px;
-            border: none;
-            cursor: pointer;
+            display: inline-block;
         }
-        /* Light/Dark Mode Toggle - at the top */
-        .light-dark-toggle {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-        .light-dark-toggle img {
+        .theme-toggle img {
             width: 30px;
             height: 30px;
-            margin: 5px;
-            cursor: pointer;
-        }
-        .ai-features {
-            margin-top: 40px;
+            vertical-align: middle;
         }
     </style>
 </head>
-<body>
-    <!-- Light/Dark Mode Toggle - at the top -->
-    <div class="light-dark-toggle">
-        <img id="theme-logo" src="sun-icon.png" alt="Light Mode" onclick="toggleTheme()">
-    </div>
-
+<body id="main-body" style="background-color: #ff7f50; color: white;">
     <div class="container">
-        <!-- Header Section -->
         <div class="header">
             <h1>Artificial Intelligence</h1>
-            <p>Explore AI capabilities</p>
         </div>
 
-        <!-- AI Features Section -->
-        <div class="ai-features">
-            <h2>AI Features:</h2>
-            <div class="feature">
-                <p>Create Movies with AI</p>
-                <button class="button red-black">Create Movie</button>
-            </div>
-            <div class="feature">
-                <p>Create Models Synchronized with Text</p>
-                <button class="button red-black">Create Model</button>
-            </div>
-            <div class="feature">
-                <p>Create Ads with AI</p>
-                <button class="button red-black">Create Ad</button>
-            </div>
+        <!-- AI Options -->
+        <a href="#" class="option">
+            <img src="https://img.icons8.com/fluency/96/clapperboard.png" alt="AI Movies">
+            <br>Create AI Movies
+        </a>
+        <a href="#" class="option">
+            <img src="https://img.icons8.com/fluency/96/data.png" alt="AI Models">
+            <br>Create Models with Text
+        </a>
+        <a href="#" class="option">
+            <img src="https://img.icons8.com/fluency/96/commercial.png" alt="AI Ads">
+            <br>Create AI Ads
+        </a>
+
+        <!-- Theme Toggle Button -->
+        <div>
+            <button class="theme-toggle" onclick="toggleTheme()">
+                <img id="theme-icon" src="https://img.icons8.com/ios-filled/50/ffffff/moon-symbol.png" alt="Toggle Theme">
+                Toggle Theme
+            </button>
         </div>
     </div>
 
     <script>
-        // Function to toggle theme between light and dark mode
-        let isDarkMode = false;
-        const themeLogo = document.getElementById('theme-logo');
-
         function toggleTheme() {
-            if (isDarkMode) {
-                document.body.style.backgroundColor = '#fff';
-                document.body.style.color = '#000';
-                themeLogo.src = 'sun-icon.png'; // Sun icon for light mode
+            const body = document.getElementById("main-body");
+            const themeIcon = document.getElementById("theme-icon");
+            if (body.style.backgroundColor === "rgb(255, 127, 80)") { /* Orange */
+                body.style.backgroundColor = "#1e90ff"; /* Blue */
+                body.style.color = "white";
+                themeIcon.src = "https://img.icons8.com/ios-filled/50/000000/sun--v1.png";
             } else {
-                document.body.style.backgroundColor = '#000';
-                document.body.style.color = '#fff';
-                themeLogo.src = 'moon-icon.png'; // Moon icon for dark mode
+                body.style.backgroundColor = "#ff7f50"; /* Orange */
+                body.style.color = "white";
+                themeIcon.src = "https://img.icons8.com/ios-filled/50/ffffff/moon-symbol.png";
             }
-            isDarkMode = !isDarkMode;
         }
     </script>
 </body>
