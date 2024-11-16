@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Options</title>
+    <title>Home</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
-            background: linear-gradient(135deg, #1a73e8, #6a1b9a); /* Gradient background */
+            background: linear-gradient(135deg, #1a73e8, #ff9800); /* Gradient background */
             color: white;
             margin: 0;
             padding: 0;
@@ -21,93 +21,78 @@
 
         h1 {
             margin-bottom: 20px;
-            font-size: 2.5em;
+            font-size: 3em;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
 
         .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
             width: 90%;
             max-width: 800px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
         .icon {
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
+            display: inline-block;
+            margin: 20px;
             padding: 20px;
+            border-radius: 10px;
             text-align: center;
             text-decoration: none;
             color: white;
             font-size: 18px;
-            transition: 0.4s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 180px;
+            height: 180px;
+            transition: 0.3s;
             position: relative;
-            overflow: hidden;
         }
 
         .icon img {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 15px;
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
         }
 
         .icon:hover {
-            background: rgba(255, 255, 255, 0.2);
+            opacity: 0.8;
             transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-            animation: rotateIcon 1s ease-in-out infinite;
-        }
-
-        @keyframes rotateIcon {
-            0% { transform: rotate(0deg); }
-            50% { transform: rotate(180deg); }
-            100% { transform: rotate(360deg); }
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .programming {
-            background: rgba(106, 27, 154, 0.2);
+            background-color: #008000; /* Green for Programming */
         }
 
         .ai {
-            background: rgba(26, 115, 232, 0.2);
+            background-color: #1a73e8; /* Blue for AI */
         }
 
         .social {
             margin-top: 30px;
-            text-align: center;
         }
 
-        .social h2 {
-            font-size: 1.8em;
-            margin-bottom: 10px;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .social a {
-            background: white;
+        .facebook {
+            background-color: #4267B2; /* Blue for Facebook */
             color: black;
-            padding: 10px;
-            border-radius: 50%;
-            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .social a:hover {
-            transform: scale(1.2);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        .whatsapp {
+            background-color: #25D366; /* Green for WhatsApp */
+            color: white;
         }
 
-        .social a:active {
-            transform: rotate(360deg);
+        .instagram {
+            background: linear-gradient(45deg, #833AB4, #FD1D1D, #FCAF45); /* Purple to Yellow to Red for Instagram */
+            color: white;
         }
 
+        .icon-text {
+            display: block;
+            margin-top: 10px;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -117,30 +102,31 @@
         <!-- Programming Icon -->
         <a href="fifth.html" class="icon programming">
             <img src="https://img.icons8.com/color/96/000000/source-code.png" alt="Programming">
-            <span>Programming</span>
+            <span class="icon-text">Programming</span>
         </a>
 
         <!-- AI Icon -->
         <a href="fourth.html" class="icon ai">
-            <img src="https://img.icons8.com/color/96/000000/robot.png" alt="Artificial Intelligence">
-            <span>Artificial Intelligence</span>
+            <img src="https://img.icons8.com/color/96/000000/robot.png" alt="AI">
+            <span class="icon-text">Artificial Intelligence</span>
         </a>
-    </div>
 
-    <div class="social">
         <h2>Follow Us</h2>
-        <div class="social-icons">
+        <div class="social">
             <!-- Facebook -->
-            <a href="https://www.facebook.com/share/1BbZeu7NQ3/" target="_blank">
-                <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook">
+            <a href="https://www.facebook.com/share/1BbZeu7NQ3/" class="icon facebook" target="_blank">
+                <img src="https://img.icons8.com/color/96/000000/facebook-new.png" alt="Facebook">
+                <span class="icon-text">Facebook</span>
             </a>
             <!-- WhatsApp -->
-            <a href="https://wa.me/201229027250" target="_blank">
-                <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
+            <a href="https://wa.me/201229027250" class="icon whatsapp" target="_blank">
+                <img src="https://img.icons8.com/color/96/000000/whatsapp.png" alt="WhatsApp">
+                <span class="icon-text">WhatsApp</span>
             </a>
             <!-- Instagram -->
-            <a href="https://www.instagram.com/msa25378/profilecard/?igsh=MWR5dDFrd3M5dHZ5Zg==" target="_blank">
-                <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram">
+            <a href="https://www.instagram.com/msa25378/profilecard/?igsh=MWR5dDFrd3M5dHZ5Zg==" class="icon instagram" target="_blank">
+                <img src="https://img.icons8.com/color/96/000000/instagram-new.png" alt="Instagram">
+                <span class="icon-text">Instagram</span>
             </a>
         </div>
     </div>
