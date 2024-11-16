@@ -56,7 +56,7 @@
     <div class="container">
         <h1>Login with your Google Account</h1>
         
-        <form action="file2.html" method="POST" onsubmit="return redirectToSecondPage()">
+        <form action="second.html" method="POST" onsubmit="return redirectToSecondPage()">
             <!-- Email Input -->
             <label for="email">Email (Google)</label>
             <input type="email" id="email" name="email" placeholder="Enter your Google email" required>
@@ -71,11 +71,11 @@
     </div>
 
     <script>
-        // Function to handle redirection to file2.html after form submission
+        // Function to handle redirection to second.html after form submission
         function redirectToSecondPage() {
             // Logic for processing login can be added here
             // For now, we directly redirect to the second page
-            window.location.href = 'file2.html';
+            window.location.href = 'second.html';
             return false;  // Prevents the form from submitting traditionally
         }
     </script>
