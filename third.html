@@ -1,0 +1,47 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In with Google</title>
+  <style>
+    body {
+      background-color: #1A1A1A;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .google-signin-button {
+      background-color: #4285F4;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .google-signin-button:hover {
+      background-color: #3367D6;
+    }
+  </style>
+  <!-- Google API Client Script -->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+  <div style="text-align: center;">
+    <h1>Sign in with your Google Account</h1>
+    <!-- Google Sign-In Button -->
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <p id="status"></p>
+  </div>
+
+  <script>
+    function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+      console.log("Email: " + profile.getEmail()); // سيتم استخدام البريد الإلكتروني هنا
+
+      // بعد تسجيل الدخول، يتم الانتقال إلى الملف الثاني
+      window.location.href = "second.html";
+    }
+  </script>
+</body>
+</html>
+
