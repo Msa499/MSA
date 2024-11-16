@@ -3,69 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login with Google or Microsoft</title>
+    <title>Login with Google</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #000000; /* Black background */
+            color: white;
             text-align: center;
-            background-color: #f4f4f4; /* Light gray background */
-            color: black;
         }
         .container {
-            max-width: 800px;
-            margin: auto;
+            max-width: 400px;
+            margin: 50px auto;
             padding: 20px;
-        }
-        .icon {
-            display: inline-block;
-            margin: 15px;
-            padding: 20px;
+            background-color: #ffffff; /* White background */
             border-radius: 10px;
-            text-align: center;
-            text-decoration: none;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: black;
+        }
+        label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
+            color: black;
+        }
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: #f4f4f4;
+            color: black;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            background-color: #4285F4; /* Google Blue */
+            border: none;
             color: white;
             font-size: 18px;
-            width: 250px;
-            height: 250px;
-            transition: 0.3s;
-            position: relative;
+            cursor: pointer;
+            border-radius: 5px;
         }
-        .icon img {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 10px;
-        }
-        .icon:hover {
-            opacity: 0.8;
-        }
-        .google {
-            background-color: #4285F4; /* Google Blue */
-        }
-        .microsoft {
-            background-color: #000000; /* Microsoft Black */
-        }
-        .icon-text {
-            display: block;
-            margin-top: 10px;
-            font-size: 16px;
+        input[type="submit"]:hover {
+            background-color: #357ae8; /* Darker Google Blue */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Login to your account</h1>
+        <h1>Login with your Google Account</h1>
         
-        <!-- Google Login (Leads to file2.html) -->
-        <a href="file2.html" class="icon google">
-            <img src="https://img.icons8.com/color/96/000000/google-logo.png" alt="Google">
-            <span class="icon-text">Login with Google</span>
-        </a>
-
-        <!-- Microsoft Login (Leads to a specific file for Microsoft login) -->
-        <a href="microsoft_file.html" class="icon microsoft">
-            <img src="https://img.icons8.com/ios-filled/100/ffffff/microsoft-logo.png" alt="Microsoft">
-            <span class="icon-text">Login with Microsoft</span>
-        </a>
+        <form action="file2.html" method="POST" onsubmit="return redirectToSecondPage()">
+            <!-- Email Input -->
+            <label for="email">Email (Google)</label>
+            <input type="email" id="email" name="email" placeholder="Enter your Google email" required>
+            
+            <!-- Password Input -->
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            
+            <!-- Submit Button -->
+            <input type="submit" value="Login">
+        </form>
     </div>
+
+    <script>
+        // Function to handle redirection to file2.html after form submission
+        function redirectToSecondPage() {
+            // Logic for processing login can be added here
+            // For now, we directly redirect to the second page
+            window.location.href = 'file2.html';
+            return false;  // Prevents the form from submitting traditionally
+        }
+    </script>
 </body>
 </html>
