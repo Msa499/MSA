@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Sections</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff4500, #1e90ff); /* خلفية مميزة */
+            color: white;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1 {
+            margin-top: 20px;
+            font-size: 36px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .icon {
+            width: 150px;
+            height: 150px;
+            margin: 20px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #6a0dad, #1e90ff); /* ألوان مميزة للأيقونات */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .icon img {
+            width: 60px;
+            height: 60px;
+        }
+        .icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+        .icon span {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            color: white;
+        }
+        .icon a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Explore Programming Sections</h1>
+        <div class="icon-container">
+            <!-- البرمجة -->
+            <div class="icon">
+                <a href="programming.html">
+                    <img src="https://img.icons8.com/color/96/000000/source-code.png" alt="Programming">
+                    <span>Programming</span>
+                </a>
+            </div>
+            <!-- صناعة الصفح ويب -->
+            <div class="icon">
+                <a href="web.html">
+                    <img src="https://img.icons8.com/color/96/000000/web-design.png" alt="Web Development">
+                    <span>Web Development</span>
+                </a>
+            </div>
+            <!-- تطبيقات -->
+            <div class="icon">
+                <a href="apps.html">
+                    <img src="https://img.icons8.com/color/96/000000/mobile-app.png" alt="Applications">
+                    <span>Applications</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
