@@ -3,90 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Platform</title>
+    <title>Options</title>
     <style>
         body {
-            background-color: black;
-            color: white;
             font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #000000; /* Black background */
+            color: white;
         }
         .container {
-            text-align: center;
-            margin-top: 50px;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
         }
         .icon {
             display: inline-block;
-            margin: 20px;
-            padding: 30px;
+            margin: 15px;
+            padding: 20px;
             border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            width: 200px;
+            height: 200px;
+            transition: 0.3s;
+            position: relative;
+        }
+        .icon img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
         }
         .icon:hover {
-            transform: scale(1.1);
+            opacity: 0.8;
         }
-        .ai-icon {
-            background-color: blue;
+        .programming {
+            background-color: #008000; /* Green for Programming */
+        }
+        .ai {
+            background-color: #1a73e8; /* Blue for AI */
+        }
+        .social {
+            margin-top: 30px;
+        }
+        .facebook {
+            background-color: #4267B2; /* Blue for Facebook */
+            color: black;
+        }
+        .whatsapp {
+            background-color: #25D366; /* Green for WhatsApp */
             color: white;
         }
-        .ai-icon img {
-            width: 50px;
-            height: 50px;
-        }
-        .programming-icon {
-            background-color: green;
+        .instagram {
+            background: linear-gradient(45deg, #833AB4, #FD1D1D, #FCAF45); /* Purple to Yellow to Red for Instagram */
             color: white;
         }
-        .programming-icon img {
-            width: 50px;
-            height: 50px;
-        }
-        .social-icons {
-            margin-top: 40px;
-        }
-        .social-icons a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-        .social-icons a:hover {
-            color: gray;
+        .icon-text {
+            display: block;
+            margin-top: 10px;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <h1>Choose an Option</h1>
-        
-        <!-- AI Icon -->
-        <div class="icon ai-icon" onclick="window.location.href='third.html'">
-            <img src="robot-icon.png" alt="AI">
-            <p>AI</p>
-        </div>
+        <h1>Select an Option</h1>
 
         <!-- Programming Icon -->
-        <div class="icon programming-icon" onclick="window.location.href='fourth.html'">
-            <img src="programming-icon.png" alt="Programming">
-            <p>Programming</p>
-        </div>
-        
-        <!-- Social Media Links -->
-        <div class="social-icons">
-            <a href="https://www.facebook.com/profile.php?id=100094218086094&mibextid=ZbWKwL" target="_blank">
-                <img src="facebook-icon.png" alt="Facebook" style="width: 30px; height: 30px;">
-                Facebook
+        <a href="file5.html" class="icon programming">
+            <img src="https://img.icons8.com/color/96/000000/source-code.png" alt="Programming">
+            <span class="icon-text">Programming</span>
+        </a>
+
+        <!-- AI Icon -->
+        <a href="file4.html" class="icon ai">
+            <img src="https://img.icons8.com/color/96/000000/robot.png" alt="AI">
+            <span class="icon-text">Artificial Intelligence</span>
+        </a>
+
+        <h2>Follow Us</h2>
+        <div class="social">
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/profile.php?id=100094218086094&mibextid=ZbWKwL" 
+               class="icon facebook" target="_blank">
+                <img src="https://img.icons8.com/color/96/000000/facebook-new.png" alt="Facebook">
+                <span class="icon-text">Facebook</span>
             </a>
-            <a href="https://wa.me/01229027250" target="_blank">
-                <img src="whatsapp-icon.png" alt="WhatsApp" style="width: 30px; height: 30px;">
-                WhatsApp
+            <!-- WhatsApp -->
+            <a href="https://wa.me/201229027250" class="icon whatsapp" target="_blank">
+                <img src="https://img.icons8.com/color/96/000000/whatsapp.png" alt="WhatsApp">
+                <span class="icon-text">WhatsApp</span>
             </a>
-            <a href="https://www.instagram.com/msa25378/profilecard/?igsh=MWR5dDFrd3M5dHZ5Zg==" target="_blank">
-                <img src="instagram-icon.png" alt="Instagram" style="width: 30px; height: 30px;">
-                Instagram
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/msa25378/profilecard/?igsh=MWR5dDFrd3M5dHZ5Zg==" 
+               class="icon instagram" target="_blank">
+                <img src="https://img.icons8.com/color/96/000000/instagram-new.png" alt="Instagram">
+                <span class="icon-text">Instagram</span>
             </a>
         </div>
     </div>
-
 </body>
 </html>
