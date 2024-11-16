@@ -3,78 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login Options</title>
     <style>
         body {
-            background-color: #2c003e; /* Dark purple with black */
-            color: white;
-            text-align: center;
             font-family: Arial, sans-serif;
-        }
-        .logo {
-            margin-top: 50px;
-            max-width: 200px;
-        }
-        .button {
-            margin: 20px;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
+            text-align: center;
+            background-color: #4B0082; /* Dark Purple */
             color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 250px;
-            margin-left: auto;
-            margin-right: auto;
         }
-        .login {
-            background-color: purple; /* Purple button */
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
         }
-        .signup {
-            background-color: #00274d; /* Blue with black button */
+        .icon {
+            display: inline-block;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            width: 200px;
+            height: 200px;
+            transition: 0.3s;
+            position: relative;
+        }
+        .icon img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+        .icon:hover {
+            opacity: 0.8;
         }
         .google {
-            background-color: white;
-            color: black;
-            border: 1px solid #ccc;
+            background-color: #4285F4; /* Google Blue */
         }
         .microsoft {
-            background-color: white;
-            color: black;
-            border: 1px solid #ccc;
+            background-color: #000000; /* Microsoft Black */
         }
-        img.icon {
-            width: 25px;
-            height: 25px;
+        .social {
+            margin-top: 30px;
+        }
+        .programming {
+            background-color: #008000; /* Green for Programming */
+        }
+        .ai {
+            background-color: #1a73e8; /* Blue for AI */
+        }
+        .icon-text {
+            display: block;
+            margin-top: 10px;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
-    <img src="https://photos.app.goo.gl/yia7CA4vHnuccnsF7" alt="Logo" class="logo">
-    <h1>Welcome to MSA</h1>
+    <div class="container">
+        <h1>Login Options</h1>
+        
+        <!-- Google Login Icon -->
+        <a href="third.html" class="icon google">
+            <img src="https://img.icons8.com/color/96/000000/google-logo.png" alt="Google">
+            <span class="icon-text">Login with Google</span>
+        </a>
 
-    <!-- Login with Google button -->
-    <a href="second.html">
-        <button class="button google">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" alt="Google Icon" class="icon">
-            Sign in with Google
-        </button>
-    </a>
+        <!-- Microsoft Login Icon -->
+        <a href="third.html" class="icon microsoft">
+            <img src="https://img.icons8.com/ios-filled/100/ffffff/microsoft-logo.png" alt="Microsoft">
+            <span class="icon-text">Login with Microsoft</span>
+        </a>
 
-    <!-- Login with Microsoft button -->
-    <a href="second.html">
-        <button class="button microsoft">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1200px-Microsoft_logo.svg.png" alt="Microsoft Icon" class="icon">
-            Sign in with Microsoft
-        </button>
-    </a>
-
-    <!-- Login and Sign Up buttons -->
-    <button class="button login">Login</button>
-    <button class="button signup">Sign Up</button>
+        <h2>Follow Us</h2>
+        <div class="social">
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/profile.php?id=100094218086094&mibextid=ZbWKwL" 
+               class="icon facebook" target="_blank">
+                <img src="https://img.icons8.com/color/96/000000/facebook-new.png" alt="Facebook">
+                <span class="icon-text">Facebook</span>
+            </a>
+            <!-- WhatsApp -->
+            <a href="https://wa.me/201229027250" class="icon whatsapp" target="_blank">
+                <img src="https://img.icons8.com/color/96/000000/whatsapp.png" alt="WhatsApp">
+                <span class="icon-text">WhatsApp</span>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/msa25378/profilecard/?igsh=MWR5dDFrd3M5dHZ5Zg==" 
+               class="icon instagram" target="_blank">
+                <img src="https://img.icons8.com/color/96/000000/instagram-new.png" alt="Instagram">
+                <span class="icon-text">Instagram</span>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
