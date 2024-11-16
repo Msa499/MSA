@@ -1,47 +1,71 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign In with Google</title>
-  <style>
-    body {
-      background-color: #1A1A1A;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
-    .google-signin-button {
-      background-color: #4285F4;
-      color: white;
-      padding: 12px 24px;
-      border: none;
-      font-size: 18px;
-      cursor: pointer;
-    }
-    .google-signin-button:hover {
-      background-color: #3367D6;
-    }
-  </style>
-  <!-- Google API Client Script -->
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with Google or Microsoft</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4; /* Light gray background */
+            color: black;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        .icon {
+            display: inline-block;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            width: 250px;
+            height: 250px;
+            transition: 0.3s;
+            position: relative;
+        }
+        .icon img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+        .icon:hover {
+            opacity: 0.8;
+        }
+        .google {
+            background-color: #4285F4; /* Google Blue */
+        }
+        .microsoft {
+            background-color: #000000; /* Microsoft Black */
+        }
+        .icon-text {
+            display: block;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-  <div style="text-align: center;">
-    <h1>Sign in with your Google Account</h1>
-    <!-- Google Sign-In Button -->
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <p id="status"></p>
-  </div>
+    <div class="container">
+        <h1>Login to your account</h1>
+        
+        <!-- Google Login (Leads to file2.html) -->
+        <a href="file2.html" class="icon google">
+            <img src="https://img.icons8.com/color/96/000000/google-logo.png" alt="Google">
+            <span class="icon-text">Login with Google</span>
+        </a>
 
-  <script>
-    function onSignIn(googleUser) {
-      var profile = googleUser.getBasicProfile();
-      console.log("Email: " + profile.getEmail()); // سيتم استخدام البريد الإلكتروني هنا
-
-      // بعد تسجيل الدخول، يتم الانتقال إلى الملف الثاني
-      window.location.href = "second.html";
-    }
-  </script>
+        <!-- Microsoft Login (Leads to a specific file for Microsoft login) -->
+        <a href="microsoft_file.html" class="icon microsoft">
+            <img src="https://img.icons8.com/ios-filled/100/ffffff/microsoft-logo.png" alt="Microsoft">
+            <span class="icon-text">Login with Microsoft</span>
+        </a>
+    </div>
 </body>
 </html>
-
