@@ -3,91 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Login Options</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
             text-align: center;
-            background: linear-gradient(135deg, #1a73e8, #ff9800); /* Gradient background */
+            background-color: #4B0082; /* Dark Purple */
             color: white;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
-
-        h1 {
-            margin-bottom: 20px;
-            font-size: 3em;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-        }
-
         .container {
-            width: 90%;
             max-width: 800px;
+            margin: auto;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.4);
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
-
         .icon {
             display: inline-block;
-            margin: 20px;
+            margin: 15px;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
             text-decoration: none;
             color: white;
             font-size: 18px;
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             transition: 0.3s;
             position: relative;
         }
-
         .icon img {
             width: 80px;
             height: 80px;
             margin-bottom: 10px;
         }
-
         .icon:hover {
             opacity: 0.8;
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-
-        .programming {
-            background-color: #008000; /* Green for Programming */
+        .google {
+            background-color: #4285F4; /* Google Blue */
         }
-
-        .ai {
-            background-color: #1a73e8; /* Blue for AI */
+        .microsoft {
+            background-color: #000000; /* Microsoft Black */
         }
-
         .social {
             margin-top: 30px;
         }
-
-        .facebook {
-            background-color: #4267B2; /* Blue for Facebook */
-            color: black;
+        .programming {
+            background-color: #008000; /* Green for Programming */
         }
-
-        .whatsapp {
-            background-color: #25D366; /* Green for WhatsApp */
-            color: white;
+        .ai {
+            background-color: #1a73e8; /* Blue for AI */
         }
-
-        .instagram {
-            background: linear-gradient(45deg, #833AB4, #FD1D1D, #FCAF45); /* Purple to Yellow to Red for Instagram */
-            color: white;
-        }
-
         .icon-text {
             display: block;
             margin-top: 10px;
@@ -96,25 +61,26 @@
     </style>
 </head>
 <body>
-    <h1>Welcome to Our Platform</h1>
-
     <div class="container">
-        <!-- Programming Icon -->
-        <a href="fifth.html" class="icon programming">
-            <img src="https://img.icons8.com/color/96/000000/source-code.png" alt="Programming">
-            <span class="icon-text">Programming</span>
+        <h1>Login Options</h1>
+        
+        <!-- Google Login Icon -->
+        <a href="third.html" class="icon google">
+            <img src="https://img.icons8.com/color/96/000000/google-logo.png" alt="Google">
+            <span class="icon-text">Login with Google</span>
         </a>
 
-        <!-- AI Icon -->
-        <a href="fourth.html" class="icon ai">
-            <img src="https://img.icons8.com/color/96/000000/robot.png" alt="AI">
-            <span class="icon-text">Artificial Intelligence</span>
+        <!-- Microsoft Login Icon -->
+        <a href="third.html" class="icon microsoft">
+            <img src="https://img.icons8.com/ios-filled/100/ffffff/microsoft-logo.png" alt="Microsoft">
+            <span class="icon-text">Login with Microsoft</span>
         </a>
 
         <h2>Follow Us</h2>
         <div class="social">
             <!-- Facebook -->
-            <a href="https://www.facebook.com/share/1BbZeu7NQ3/" class="icon facebook" target="_blank">
+            <a href="https://www.facebook.com/profile.php?id=100094218086094&mibextid=ZbWKwL" 
+               class="icon facebook" target="_blank">
                 <img src="https://img.icons8.com/color/96/000000/facebook-new.png" alt="Facebook">
                 <span class="icon-text">Facebook</span>
             </a>
@@ -124,7 +90,8 @@
                 <span class="icon-text">WhatsApp</span>
             </a>
             <!-- Instagram -->
-            <a href="https://www.instagram.com/msa25378/profilecard/?igsh=MWR5dDFrd3M5dHZ5Zg==" class="icon instagram" target="_blank">
+            <a href="https://www.instagram.com/msa25378/profilecard/?igsh=MWR5dDFrd3M5dHZ5Zg==" 
+               class="icon instagram" target="_blank">
                 <img src="https://img.icons8.com/color/96/000000/instagram-new.png" alt="Instagram">
                 <span class="icon-text">Instagram</span>
             </a>
