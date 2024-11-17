@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,6 +24,33 @@
             font-size: 3.5em;
             margin-bottom: 20px;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5), -3px -3px 10px #ffffff80;
+        }
+
+        .animated-text {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #FFD700;
+            text-shadow: 0 0 10px #FFD700, 0 0 20px #FF6347, 0 0 30px #FF6347, 0 0 40px #FF4500;
+            animation: glow 2s infinite alternate, move 10s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700;
+            }
+            to {
+                text-shadow: 0 0 20px #FF6347, 0 0 30px #FF6347, 0 0 40px #FF4500, 0 0 50px #FF4500;
+            }
+        }
+
+        @keyframes move {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(100%);
+            }
         }
 
         .container {
@@ -125,6 +152,7 @@
 </head>
 <body>
     <div class="container">
+        <div class="animated-text">مرحباً بك في منصة MSA</div>
         <h1>Login Options</h1>
         
         <!-- Google Login Icon -->
