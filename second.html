@@ -93,6 +93,49 @@
             margin-top: 10px;
             font-size: 16px;
         }
+
+        /* Bot Popup */
+        .bot-popup {
+            display: none;
+            position: fixed;
+            bottom: 10%;
+            right: 5%;
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .bot-header {
+            background: #8e44ad;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .bot-close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        iframe {
+            width: 100%;
+            height: calc(100% - 40px);
+            border: none;
+        }
+
+        .bot-icon {
+            background-color: #8e44ad; /* Purple for Bot */
+        }
     </style>
 </head>
 <body>
@@ -110,6 +153,14 @@
             <img src="https://img.icons8.com/color/96/000000/robot.png" alt="AI">
             <span class="icon-text">Artificial Intelligence</span>
         </a>
+
+        <!-- Bot Icon -->
+        <div>
+            <a class="icon bot-icon" onclick="toggleBotPopup()">
+                <img src="https://img.icons8.com/fluency/96/000000/chatbot.png" alt="Bot Icon">
+                <span class="icon-text">MSA Bot</span>
+            </a>
+        </div>
 
         <h2>Follow Us</h2>
         <div class="social">
@@ -130,5 +181,25 @@
             </a>
         </div>
     </div>
+
+    <!-- Bot Popup -->
+    <div class="bot-popup" id="botPopup">
+        <div class="bot-header">
+            مساعد MSA 
+            <span class="bot-close" onclick="toggleBotPopup()">✖</span>
+        </div>
+        <iframe 
+            src="https://t.me/MSA_HelperBot" 
+            title="Bot Chat">
+        </iframe>
+    </div>
+
+    <script>
+        // Toggle Bot Popup
+        function toggleBotPopup() {
+            const popup = document.getElementById('botPopup');
+            popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
 </body>
 </html>
