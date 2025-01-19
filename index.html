@@ -34,6 +34,29 @@
             opacity: 0.2;
         }
 
+        .background .msa-text {
+            font-size: 4em;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(0, 255, 0, 0.7);
+            text-shadow: 2px 2px 5px rgba(0, 255, 0, 0.7);
+            animation: glitch 1.5s infinite;
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: translateX(-50%) skew(0.5deg);
+            }
+            50% {
+                transform: translateX(-50%) skew(-0.5deg);
+            }
+            100% {
+                transform: translateX(-50%) skew(0.5deg);
+            }
+        }
+
         .container {
             position: relative;
             z-index: 1;
@@ -47,9 +70,10 @@
             text-shadow: 2px 2px 5px rgba(0, 255, 0, 0.7);
         }
 
+        /* Login icon style */
         .icon {
             display: inline-block;
-            width: 150px;
+            width: 200px;
             margin: 15px;
             padding: 10px;
             border-radius: 10px;
@@ -66,14 +90,17 @@
             transform: scale(1.1);
         }
 
+        /* Google Login */
         .google {
             background-color: #4285F4;
+            color: white;
         }
 
-        .microsoft {
-            background-color: #000000;
+        .google:hover {
+            background-color: #3367D6;
         }
 
+        /* Social icons style */
         .social {
             margin-top: 30px;
         }
@@ -110,10 +137,27 @@
                 transform: translateY(-10px);
             }
         }
+
+        .robot {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            animation: moveRobot 5s infinite;
+        }
+
+        @keyframes moveRobot {
+            0% { left: -150px; }
+            50% { left: 50%; }
+            100% { left: 100%; }
+        }
     </style>
 </head>
 <body>
-    <div class="background"></div>
+    <div class="background">
+        <div class="msa-text">MSA</div>
+    </div>
     <div class="container">
         <img src="YOUR_IMAGE_PATH" alt="MSA Logo" class="logo">
         <h1>Login Options</h1>
@@ -151,5 +195,8 @@
             </a>
         </div>
     </div>
+
+    <!-- Robot Animation -->
+    <img src="https://example.com/robot.gif" alt="Robot" class="robot">
 </body>
 </html>
