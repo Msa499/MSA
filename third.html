@@ -1,177 +1,153 @@
-            <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Login</title>
+    <title>Registration</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            color: #fff;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100vh;
-            background: radial-gradient(circle, #0f2027, #203a43, #2c5364);
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin: 0;
         }
-
-        /* Background animation */
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://media.giphy.com/media/l3fZK13HDgEz4SHDO/giphy.gif') no-repeat center center/cover;
-            opacity: 0.1;
-            z-index: -1;
-        }
-
         .form-container {
-            background-color: rgba(15, 32, 39, 0.9);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            width: 100%;
-            max-width: 400px;
-            position: relative;
-        }
-
-        .form-container::before {
-            content: 'MSA';
-            position: absolute;
-            top: -10px;
-            left: 10px;
-            font-size: 80px;
-            font-weight: bold;
-            color: rgba(255, 255, 255, 0.1);
-            z-index: -1;
-            transform: rotate(-45deg);
-        }
-
-        input[type="text"], input[type="password"] {
-            width: 100%;
-            padding: 15px;
-            margin: 15px 0;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            background: #34495e;
-            color: white;
-        }
-
-        button {
-            background: linear-gradient(45deg, #16a085, #27ae60);
-            color: white;
-            border: none;
-            padding: 15px;
-            font-size: 18px;
+            background: white;
+            padding: 20px;
             border-radius: 8px;
-            cursor: pointer;
-            width: 100%;
-            transition: background 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
         }
-
-        button:hover {
-            background: #1abc9c;
-        }
-
-        .error {
-            margin-top: 15px;
+        input {
+            width: 90%;
             padding: 10px;
-            color: #e74c3c;
-            font-size: 16px;
-            font-weight: bold;
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            border-radius: 10px;
-            display: none;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
         }
-
-        .google-logo {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-        }
-
-        .google-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #4285F4;
-            border-radius: 8px;
-            padding: 10px 20px;
-            cursor: pointer;
-            margin: 15px 0;
-        }
-
-        .google-btn:hover {
-            background-color: #3367D6;
-        }
-
-        .google-btn span {
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007BFF;
             color: white;
             font-size: 16px;
+            cursor: pointer;
         }
-
-        /* Animation for dynamic stars in the background */
-        @keyframes moveStars {
-            from { background-position: 0 0; }
-            to { background-position: 1000px 1000px; }
+        button:hover {
+            background-color: #0056b3;
         }
-
-        body::after {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: transparent url('https://www.transparenttextures.com/patterns/dark-matter.png');
-            animation: moveStars 60s linear infinite;
-            opacity: 0.2;
-            z-index: -1;
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        .link {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .link a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+        .social-login {
+            margin: 15px 0;
+        }
+        .social-login button {
+            margin: 5px 0;
+            background-color: #4285F4;
+            font-size: 14px;
+        }
+        .social-login button:hover {
+            background-color: #2a68c8;
+        }
+        #password-strength {
+            font-size: 12px;
+            text-align: left;
+            color: green;
         }
     </style>
 </head>
 <body>
     <div class="form-container">
-        <h1>Google Login</h1>
-        <form id="loginForm">
-            <label for="email">Email:</label>
-            <input type="text" id="email" placeholder="Enter your email">
-            <label for="password">Password:</label>
-            <input type="password" id="password" placeholder="Enter your password">
-            <button type="button" onclick="validateForm()">Login</button>
+        <h2>Register</h2>
+        <div id="error-message" class="error"></div>
+        <form id="registrationForm">
+            <input type="text" id="name" placeholder="Name" required />
+            <input type="email" id="email" placeholder="Email" required />
+            <input type="password" id="password" placeholder="Password" oninput="checkPasswordStrength()" required />
+            <div id="password-strength"></div>
+            <button type="button" onclick="validateForm()">Register</button>
         </form>
-        <div id="errorMessage" class="error">
-            أرجو التأكد من المعلومات
+        <div class="social-login">
+            <p>Or sign up with:</p>
+            <button onclick="signUpWithGoogle()">Sign up with Google</button>
+            <button onclick="signUpWithFacebook()">Sign up with Facebook</button>
         </div>
-        <div class="google-btn" onclick="googleLogin()">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google.png" class="google-logo" alt="Google Logo">
-            <span>Login with Google</span>
+        <div class="link">
+            <span>Already have an account? <a href="seventh.html">Login</a></span>
         </div>
     </div>
 
     <script>
         function validateForm() {
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value.trim();
-            const errorMessage = document.getElementById("errorMessage");
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const errorMessage = document.getElementById('error-message');
 
-            if (email === "" || password === "") {
-                errorMessage.style.display = "block";
-                return false;
+            // Reset error message
+            errorMessage.textContent = '';
+
+            // Validation
+            if (!name || !email || !password) {
+                errorMessage.textContent = 'Please fill out all fields.';
+                return;
+            }
+
+            if (!email.includes('@') || !email.includes('.')) {
+                errorMessage.textContent = 'Please enter a valid email.';
+                return;
+            }
+
+            if (password.length < 6) {
+                errorMessage.textContent = 'Password must be at least 6 characters.';
+                return;
+            }
+
+            // If validation passes
+            window.location.href = 'second.html';
+        }
+
+        function checkPasswordStrength() {
+            const password = document.getElementById('password').value;
+            const strengthMessage = document.getElementById('password-strength');
+
+            if (password.length < 6) {
+                strengthMessage.textContent = 'Weak password';
+                strengthMessage.style.color = 'red';
+            } else if (password.length < 10) {
+                strengthMessage.textContent = 'Moderate password';
+                strengthMessage.style.color = 'orange';
             } else {
-                errorMessage.style.display = "none";
-                window.location.href = "second.html";
+                strengthMessage.textContent = 'Strong password';
+                strengthMessage.style.color = 'green';
             }
         }
 
-        function googleLogin() {
-            alert("Google Login Clicked");
+        function signUpWithGoogle() {
+            alert("Google sign-up not implemented yet.");
+        }
+
+        function signUpWithFacebook() {
+            alert("Facebook sign-up not implemented yet.");
         }
     </script>
 </body>
