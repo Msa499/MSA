@@ -248,7 +248,7 @@
         <section class="hero">
             <h1 id="hero-title">بناء مستقبل الذكاء</h1>
             <p id="hero-subtitle">نحن لا نطور حلول الذكاء الاصطناعي، بل نصنع شركاء رقميين ينمون مع طموحاتك.</p>
-            <a href="#features" class="cta-button" id="hero-cta">اكتشف برامجنا الاحترافية</a>
+            <a href="second.html" class="cta-button" id="hero-cta">تسجيل الدخول</a>
             <div class="scroll-down">اسحب للأسفل &#x2193;</div>
         </section>
 
@@ -334,7 +334,7 @@
             animate();
             window.addEventListener('resize', () => { renderer.setSize(window.innerWidth, window.innerHeight); camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix(); });
 
-            // --- Scrolling Animations (Updated logic for new layout) ---
+            // --- Scrolling Animations ---
             gsap.registerPlugin(ScrollTrigger);
             gsap.to('#hero-title', { opacity: 1, y: 0, duration: 1, delay: 0.5 });
             gsap.to('#hero-subtitle', { opacity: 1, y: 0, duration: 1, delay: 0.8 });
@@ -366,17 +366,13 @@
                 chatBody.scrollTop = chatBody.scrollHeight;
             }
 
-            // === NEW: HORUS AI LOGIC IMPLEMENTED ===
+            // === HORUS AI LOGIC ===
             function getHorusResponse(userInput) {
                 const lowerInput = userInput.toLowerCase();
-                
-                // Keywords for collaboration
                 const workKeywords = ["شغل", "تعاون", "أعمل موقع", "اصمملي", "لوجو", "تطبيق", "مشروع", "سعر", "تكلفة"];
                 if (workKeywords.some(keyword => lowerInput.includes(keyword))) {
-                    return `بالتأكيد! يسعدنا التعاون معك. يمكنك مناقشة تفاصيل مشروعك مباشرة مع فريقنا المختص عبر واتساب 🎉\n\n👈 للتواصل المباشر مع فريق MSA: <a href="https://wa.me/201229027250" target="_blank">https://wa.me/201229027250</a>`;
+                    return `بالتأكيد! يسعدنا التعاون معك. يمكنك مناقشة تفاصيل مشروعك مباشرة مع فريقنا المختص عبر واتساب 🎉\n\n👈 للتواصل المباشر مع فريق MSA: <a href="https://wa.me/2012229027250" target="_blank">https://wa.me/201229027250</a>`;
                 }
-                
-                // Keywords for services/programs
                 const programKeywords = ["برامج", "خدمات", "بتعملوا ايه", "كورسات", "اتعلم", "تفاصيل"];
                 if (programKeywords.some(keyword => lowerInput.includes(keyword))) {
                     return `أهلاً بك في MSA! نحن نقدم مجموعة من البرامج الاحترافية لمساعدتك على تحقيق أهدافك. إليك نظرة سريعة على باقاتنا الرئيسية:\n
@@ -385,16 +381,10 @@
 3️⃣ **برنامج التصميمات:** لصناعة هوية بصرية كاملة وتصميمات سوشيال ميديا جذابة.\n
 أي برنامج يثير اهتمامك أكثر لأعطيك تفاصيل أدق؟ 🤔`;
                 }
-
-                // Default responses
                 switch(lowerInput) {
-                    case "مرحبا":
-                    case "أهلا":
-                    case "hi":
-                    case "hello":
+                    case "مرحبا": case "أهلا": case "hi": case "hello":
                         return "أهلاً بك! أنا حورس، مساعدك الذكي من MSA. كيف يمكنني خدمتك اليوم؟ ✨";
-                    case "شكرا":
-                    case "شكراً":
+                    case "شكرا": case "شكراً":
                         return "على الرحب والسعة! أنا هنا دائمًا للمساعدة. هل لديك أي استفسارات أخرى؟ 😊";
                     default:
                         return "لم أفهم سؤالك تمامًا. هل يمكنك توضيحه؟ أنا هنا لمساعدتك في أي استفسار عن برامجنا في البرمجة، الذكاء الاصطناعي، أو التصميم. 🤖";
